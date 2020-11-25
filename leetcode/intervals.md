@@ -1,4 +1,5 @@
 + [Insert Interval](#insert-interval)
++ [Merge Intervals](#merge-intervals)
 
 ## Insert Interval
 
@@ -25,4 +26,33 @@ public int[][] insert(int[][] intervals, int[] newInterval) {
     }
     return result.toArray(new int[result.size()][2]);
 }     
+```
+
+## Merge Intervals
+
+https://leetcode.com/problems/merge-intervals/
+
+```java
+// отдельно сделаем сортировку
+private class IntervalComparator implements Comparator<int[]> {
+    public int compare(int[] a, int[] b) {
+        return a[0] < b[0] ? -1 : a[0] == b[0] ? 0 : 1;
+    }
+}
+
+public int[][] merge(int[][] intervals) {
+    if(intervals == null)
+        return intervals;
+    LinkedList<int[]> newintervals = new LinkedList<>();//создание связанного списка
+    Collections.sort(Arrays.asList(intervals), new IntervalComparator());
+    //intervals.sort(key = lambda x: x[0])
+    
+    for (int[] interval : intervals){ //interval in intervals
+        if (newintervals.isEmpty() || newintervals.getLast()[1] < interval[0])
+            newintervals.add(interval);
+        else if (interval[1] >= newintervals.getLast()[1])
+            newintervals.getLast()[1] = interval[1];
+    }
+    return newintervals.toArray(new int[newintervals.size()][]);
+}
 ```
