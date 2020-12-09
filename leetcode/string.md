@@ -1,6 +1,6 @@
 # String
 
-+ [Valid Palindrome](#valid-palindrome)
++ [Group Anagrams](#group-anagrams)
 
 ## Group Anagrams
 
