@@ -10,7 +10,7 @@ https://leetcode.com/problems/reverse-linked-list/
 public ListNode reverseList(ListNode head) {
     ListNode prev = null;
     ListNode curr = head;
-    while (curr != null){
+    while (curr != null) {
         ListNode nextel = curr.next;
         curr.next = prev;
         prev = curr;
