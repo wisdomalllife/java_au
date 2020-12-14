@@ -72,11 +72,11 @@ public int eraseOverlapIntervals(int[][] intervals) {
     // sort intervals in increasing order of starting point
     int end = intervals[0][1];
     for (int i = 1; i < intervals.length; i++) {
-        if (end >= intervals[i][1]){
+        if (end >= intervals[i][1]) {
             min ++;
             end = intervals[i][1];
         }
-        else if(end > intervals[i][0]) {
+        else if (end > intervals[i][0]) {
             min ++;
         }
         else {
