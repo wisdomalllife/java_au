@@ -1,3 +1,5 @@
+# Intervals
+
 + [Insert Interval](#insert-interval)
 + [Merge Intervals](#merge-intervals)
 
