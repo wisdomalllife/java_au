@@ -3,7 +3,9 @@
 + [Squares of a Sorted Array](#squares-of-a-sorted-array)
 
 ## Squares of a Sorted Array
+
 https://leetcode.com/problems/squares-of-a-sorted-array/
+
 ```java
 public int findFirstPositive(int[] A) {
     for (int i = 0; i < A.length; i++) {
