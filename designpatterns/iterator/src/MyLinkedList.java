@@ -1,4 +1,31 @@
-class MyLinkedList<T> {
+import java.util.Iterator;
+import java.util.NoSuchElementException;
+
+class MyLinkedList<T> implements Iterable<T> {
+
+    public Iterator<T> iterator() {
+        return new MyIterator<>(this);
+    }
+
+    public class MyIterator<E> implements Iterator<E> {
+
+        int index = 0;
+        MyLinkedList<E> oMyLinkedList;
+
+        public MyIterator(MyLinkedList<E> eMyLinkedList) {
+            this.oMyLinkedList = eMyLinkedList;
+        }
+        
+        public boolean hasNext() {
+            return oMyLinkedList.lenOfList >= index + 1;
+        }
+
+        public E next() throws NoSuchElementException {
+            return oMyLinkedList.get(index++);
+        }
+
+    }
+
     // MyLinkedList.Node node;
     private static class Node<T> {
         T val;
