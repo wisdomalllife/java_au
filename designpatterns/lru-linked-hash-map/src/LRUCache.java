@@ -30,7 +30,6 @@ public class LRUCache<T> {
         }
     }
 
-
     private Map<T, Node> cache = new HashMap<>();
     private int size;
     private DoublyLinkedList list = new DoublyLinkedList();
@@ -48,7 +47,7 @@ public class LRUCache<T> {
 
             return ((T) node.val);
         }
-        return ((T) -1);
+        return null;
     }
 
     public void put(T key, T value) {
