@@ -12,8 +12,8 @@ class MyLinkedList<T> implements Iterable<T> {
         int index = 0;
         MyLinkedList<E> oMyLinkedList;
 
-        public MyIterator(MyLinkedList<E> eMyLinkedList) {
-            this.oMyLinkedList = eMyLinkedList;
+        public MyIterator(MyLinkedList<E> oMyLinkedList) {
+            this.oMyLinkedList = oMyLinkedList;
         }
         
         public boolean hasNext() {
