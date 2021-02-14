@@ -1,12 +1,11 @@
 # Design
 
-1. https://leetcode.com/problems/flatten-nested-list-iterator/
-
 + [LRU Cache](#lru-cache)
 + [Min Stack](#min-stack)
 + [Implement Stack using Queues](#implement-stack-using-queues)
 + [Implement Queue using Stacks](#implement-queue-using-stacks)
 + [Binary Search Tree Iterator](#binary-search-tree-iterator)
++ [Flatten Nested List Iterator](#flatten-nested-list-iterator)
 
 ## LRU Cache
 
@@ -227,6 +226,38 @@ class BSTIterator {
     }
     public boolean hasNext() {
         return this.index != this.queue.size() - 1;
+    }
+}
+```
+
+## Flatten Nested List Iterator
+
+https://leetcode.com/problems/flatten-nested-list-iterator/
+
+```java
+public class NestedIterator implements Iterator<Integer> {
+    Queue<Integer> queue = new LinkedList<>();
+    public NestedIterator(List<NestedInteger> nestedList) {
+        this.queue = queue;
+        addToList(nestedList);
+    }
+    private void addToList(List<NestedInteger> nestedList) {
+        if (nestedList.size() == 0 || nestedList == null)
+            return;
+        for (NestedInteger a : nestedList) {
+            if (a.isInteger())
+                queue.add(a.getInteger());//определяет целочисленное значение
+            else
+                addToList(a.getList());//recursion
+        }
+    }
+    @Override
+    public Integer next() {
+        return queue.poll();
+    }
+    @Override
+    public boolean hasNext() {
+        return !queue.isEmpty();
     }
 }
 ```
