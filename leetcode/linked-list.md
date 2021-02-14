@@ -1,4 +1,8 @@
 # Linked List
+1. https://leetcode.com/problems/reverse-linked-list/
+4. https://leetcode.com/problems/merge-two-sorted-lists/
+5. https://leetcode.com/problems/intersection-of-two-linked-lists/
+6. https://leetcode.com/problems/sort-list/ тут Merge Sort
 
 + [Middle of the Linked List](#middle-of-the-linked-list)
 + [Longest Palindromic Substring](#longest-palindromic-substring)
