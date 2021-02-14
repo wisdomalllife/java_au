@@ -1,4 +1,7 @@
 # Graph
+https://leetcode.com/problems/number-of-islands/ 
+https://leetcode.com/problems/course-schedule-ii/ (dfs и подсчет ссылок)
+https://leetcode.com/problems/course-schedule/ (dfs и подсчет ссылок)
 
 + [Number of Islands](#number-of-islands)
 
