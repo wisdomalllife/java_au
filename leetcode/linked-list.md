@@ -5,6 +5,22 @@
 + [Palindrome Linked List](#palindrome-linked-list)
 + [Reorder List](#reorder-list)
 
+## Middle of the Linked List
+
+https://leetcode.com/problems/middle-of-the-linked-list/
+
+```java
+public ListNode middleNode(ListNode head) {
+    ListNode slow = head;
+    ListNode fast = head;
+    while (fast != null && fast.next != null) {
+        slow = slow.next;
+        fast = fast.next.next;
+    }
+    return slow;
+}
+```
+
 ## Reorder List
 
 https://leetcode.com/problems/reorder-list/
