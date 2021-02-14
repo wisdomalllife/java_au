@@ -1,6 +1,5 @@
 # Intervals
 
-+ [Middle of the Linked List](#middle-of-the-linked-list)
 + [Insert Interval](#insert-interval)
 + [Merge Intervals](#merge-intervals)
 + [Non-overlapping Intervals](#non-overlapping-intervals)
