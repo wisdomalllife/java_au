@@ -2,6 +2,7 @@
 
 + [Insert Interval](#insert-interval)
 + [Merge Intervals](#merge-intervals)
++ [Non-overlapping Intervals](#non-overlapping-intervals)
 
 ## Insert Interval
 
@@ -56,5 +57,34 @@ public int[][] merge(int[][] intervals) {
             newintervals.getLast()[1] = interval[1];
     }
     return newintervals.toArray(new int[newintervals.size()][]);
+}
+```
+
+## Non-overlapping Intervals
+
+https://leetcode.com/problems/non-overlapping-intervals/
+
+```java
+public int eraseOverlapIntervals(int[][] intervals) {
+    if (intervals == null || intervals.length == 0 || intervals.length == 1) {
+        return 0;
+    }
+    int min = 0;
+    Arrays.sort(intervals, (a,b) -> a[0] - b[0]); 
+    // sort intervals in increasing order of starting point
+    int end = intervals[0][1];
+    for (int i = 1; i < intervals.length; i++) {
+        if (end >= intervals[i][1]) {
+            min ++;
+            end = intervals[i][1];
+        }
+        else if (end > intervals[i][0]) {
+            min ++;
+        }
+        else {
+            end = intervals[i][1];
+        }
+    }
+    return min;
 }
 ```
