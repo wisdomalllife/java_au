@@ -1,5 +1,6 @@
 # Intervals
 
++ [Middle of the Linked List](#middle-of-the-linked-list)
 + [Insert Interval](#insert-interval)
 + [Merge Intervals](#merge-intervals)
 + [Non-overlapping Intervals](#non-overlapping-intervals)
@@ -86,5 +87,21 @@ public int eraseOverlapIntervals(int[][] intervals) {
         }
     }
     return min;
+}
+```
+
+## Middle of the Linked List
+
+https://leetcode.com/problems/middle-of-the-linked-list/
+
+```java
+public ListNode middleNode(ListNode head) {
+    ListNode slow = head;
+    ListNode fast = head;
+    while (fast != null && fast.next != null) {
+        slow = slow.next;
+        fast = fast.next.next;
+    }
+    return slow;
 }
 ```
