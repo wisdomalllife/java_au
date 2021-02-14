@@ -1,12 +1,12 @@
 # Design
 
 1. https://leetcode.com/problems/flatten-nested-list-iterator/
-6. https://leetcode.com/problems/binary-search-tree-iterator/
 
 + [LRU Cache](#lru-cache)
 + [Min Stack](#min-stack)
 + [Implement Stack using Queues](#implement-stack-using-queues)
 + [Implement Queue using Stacks](#implement-queue-using-stacks)
++ [Binary Search Tree Iterator](#binary-search-tree-iterator)
 
 ## LRU Cache
 
@@ -196,6 +196,37 @@ class MyQueue {
      */
     public boolean empty() {
         return s1.isEmpty();
+    }
+}
+```
+
+## Binary Search Tree Iterator
+
+https://leetcode.com/problems/binary-search-tree-iterator/
+
+```java
+class BSTIterator {
+    ArrayList<Integer> queue;
+    int index;
+    public BSTIterator(TreeNode root) {
+        this.index = -1; //указатель на наименьший элемент
+        this.queue = new ArrayList<Integer>();
+        this.inorder(root); //заполняем стэк
+    }
+    private void inorder(TreeNode root) {
+        if (root == null) {
+            return;
+        }
+        this.inorder(root.left);
+        this.queue.add(root.val);
+        this.inorder(root.right);
+    }
+    public int next() {
+        this.index += 1;
+        return this.queue.get(this.index);
+    }
+    public boolean hasNext() {
+        return this.index != this.queue.size() - 1;
     }
 }
 ```
