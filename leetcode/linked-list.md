@@ -1,5 +1,6 @@
 # Linked List
 
++ [Middle of the Linked List](#middle-of-the-linked-list)
 + [Longest Palindromic Substring](#longest-palindromic-substring)
 + [Palindrome Linked List](#palindrome-linked-list)
 + [Reorder List](#reorder-list)
