@@ -1,12 +1,12 @@
 # Design
 
 1. https://leetcode.com/problems/flatten-nested-list-iterator/
-3. https://leetcode.com/problems/min-stack/
 4. https://leetcode.com/problems/implement-stack-using-queues/
 5. https://leetcode.com/problems/implement-queue-using-stacks/
 6. https://leetcode.com/problems/binary-search-tree-iterator/
 
 + [LRU Cache](#lru-cache)
++ [Min Stack](#min-stack)
 
 ## LRU Cache
 
@@ -67,6 +67,37 @@ class LRUCache {
         Node node = new Node(key, value);
         list.push(node);
         cache.put(key, node);
+    }
+}
+```
+
+## Min Stack
+
+https://leetcode.com/problems/min-stack/
+
+```java
+class MinStack {
+    Stack<Integer> stack;
+    Stack<Integer> minsStack;
+    public MinStack() {
+        stack = new Stack<>();
+        minsStack = new Stack<>();//for getMin()
+    }
+    public void push(int x) {
+        if (minsStack.isEmpty() || minsStack.peek() >= x) minsStack.push(x);
+        stack.push(x);
+    }
+    // stack.peek() берет вершину стэка
+    public void pop() {
+        if (stack.peek().equals(minsStack.peek())) minsStack.pop();
+        stack.pop();
+    }
+    // ничего не рушится тк top of minsStack - the smallest!
+    public int top() {
+        return stack.peek();
+    }
+    public int getMin() {
+        return minsStack.peek();
     }
 }
 ```
