@@ -155,3 +155,8 @@ public class Searching {
 
 } 
 ```
+# Triangle
+
+```java
+
+```
